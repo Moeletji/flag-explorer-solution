@@ -1,0 +1,41 @@
+# Node & NPM
+node_modules/
+npm-debug.log*
+package-lock.json
+packages/*/node_modules
+packages/*/package-lock.json 
+
+# Build output
+dist/
+build/
+packages/backend/dist/
+packages/frontend/build/
+
+# Env files
+.env
+.env.*
+packages/backend/.env
+packages/frontend/.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/*
+!/.vscode/settings.json
+!/.vscode/extensions.json
+!/.vscode/launch.json
+!/.vscode/tasks.json
+
+
+# Test Output
+coverage/
+junit.xml
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
