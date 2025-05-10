@@ -1,0 +1,41 @@
+{
+  "name": "flag-explorer-solution",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo for the Flag Explorer application, using NPM workspaces.",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:backend": "npm run start:dev -w @flag-explorer/backend",
+    "dev:frontend": "npm run start -w @flag-explorer/frontend",
+    "build:backend": "npm run build -w @flag-explorer/backend",
+    "build:frontend": "npm run build -w @flag-explorer/frontend",
+    "lint:backend": "npm run lint -w @flag-explorer/backend",
+    "lint:frontend": "npm run lint -w @flag-explorer/frontend",
+    "test:backend": "npm run test -w @flag-explorer/backend",
+    "test:frontend": "npm run test -w @flag-explorer/frontend",
+    "test:backend:ci": "npm run test:ci -w @flag-explorer/backend",
+    "test:frontend:ci": "npm run test --workspace=@flag-explorer/frontend -- --watchAll=false",
+    "ci:lint": "npm run lint:backend && npm run lint:frontend",
+    "ci:test": "npm run test:backend:ci && npm run test:frontend:ci",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "prettier": "^3.2.4",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": "eslint --fix",
+    "*.{json,md,yaml,yml}": "prettier --write"
+  }
+}
